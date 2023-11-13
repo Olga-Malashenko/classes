@@ -40,6 +40,29 @@ export class Character {
     this.attack = 1;
     this.defence = 1;
   }
+
+  levelUp() {
+    try {
+      if (this.health > 0) { // Почему в задании "не равен 0"? А "-" норм?
+        this.level += 1;
+        this.attack *= 1.2;
+        this.defence *= 1.2;
+        this.health = 100;
+      }
+    } catch (err) {
+      throw new Error('Уже ничто не поможет, персонаж умер');
+    }
+  }
+
+  damage(points) {
+    try {
+      if (this.health >= 0) { // Почему в задании "">=0", ведь если 0,то умер?
+        this.health -= points * (1 - this.defence / 100);
+      }
+    } catch {
+      throw new Error('Хуже уже некуда, персонаж умер');
+    }
+  }
 }
 
 export class Bowman extends Character {

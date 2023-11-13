@@ -1,5 +1,6 @@
-import { Character } from '../app';
-import { Bowman, Swordsman, Magician, Undead, Zombie, Daemon } from '../app';
+import {
+  Character, Bowman, Swordsman, Magician, Undead, Zombie, Daemon,
+} from '../app';
 
 test.each([
   ['Ivan', 'Ivan'],
