@@ -69,3 +69,9 @@ test.each([
   personage.damage(20);
   expect(personage.health).toEqual(expected);
 });
+
+  test('should an error be trown', () => {
+    expect (() => {
+      const personage = new Character('Ivan', 'BabaYaga');
+    }).toThrow('Неизвестный тип');
+  });
