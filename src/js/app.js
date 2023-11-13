@@ -56,7 +56,7 @@ export class Character {
 
   damage(points) {
     try {
-      if (this.health >= 0) { // Почему в задании "">=0", ведь если 0,то умер?
+      if (this.health > 0) { // Почему в задании "">=0", ведь если 0,то умер?
         this.health -= points * (1 - this.defence / 100);
       }
     } catch {
