@@ -1,6 +1,10 @@
-import {
-  Character, Bowman, Swordsman, Magician, Undead, Zombie, Daemon,
-} from '../app';
+import Character from '../app';
+import Bowman from '../Bowman';
+import Swordsman from '../Swordsman';
+import Magician from '../Magician';
+import Undead from '../Undead';
+import Zombie from '../Zombie';
+import Daemon from '../Daemon';
 
 test.each([
   ['Ivan', 'Ivan'],
@@ -70,8 +74,8 @@ test.each([
   expect(personage.health).toEqual(expected);
 });
 
-  test('should an error be trown', () => {
-    expect (() => {
-      const personage = new Character('Ivan', 'BabaYaga');
-    }).toThrow('Неизвестный тип');
-  });
+test('should an error be trown', () => {
+  expect(() => {
+    const personage = new Character('Ivan', 'BabaYaga');
+  }).toThrow('Неизвестный тип');
+});
