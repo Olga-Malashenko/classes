@@ -17,14 +17,8 @@ export default class Character {
 
     try {
       const typeList = ['Bowman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombie'];
-      let str = false;
-      for (const element of typeList) {
-        if (type === element) {
-          str = true;
-          break;
-        }
-      }
-      if (typeof (type) === 'string' && str) {
+      const declaredType = typeList.find((element) => element === type);
+      if (typeof (type) === 'string' && declaredType) {
         this.type = type;
       } else {
         // console.log('Неизвестный тип');
