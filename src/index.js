@@ -7,5 +7,3 @@ import Magician from './js/Magician';
 import Undead from './js/Undead';
 import Zombie from './js/Zombie';
 import Daemon from './js/Daemon';
-
-// TODO: write your code in app.js

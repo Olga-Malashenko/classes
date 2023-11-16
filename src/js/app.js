@@ -1,15 +1,8 @@
-// TODO: write your code here
-
-// console.log('worked');
-// console.log(sum([1, 2]));
-
 export default class Character {
   constructor(name, type) {
     try {
-      if (typeof (name) === 'string' && name.length > 2 && name.length < 10) {
+      if (name && typeof (name) === 'string' && name.length > 2 && name.length < 10) {
         this.name = name;
-      } else {
-        // console.log('Имя не соответствует критериям');
       }
     } catch (err) {
       throw new Error('Имя не соответствует критериям');
@@ -18,10 +11,8 @@ export default class Character {
     try {
       const typeList = ['Bowman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombie'];
       const declaredType = typeList.find((element) => element === type);
-      if (typeof (type) === 'string' && declaredType) {
+      if (type && typeof (type) === 'string' && declaredType) {
         this.type = type;
-      } else {
-        // console.log('Неизвестный тип');
       }
     } catch (err) {
       throw new Error('Неизвестный тип');
@@ -30,13 +21,13 @@ export default class Character {
     this.health = 100;
     this.level = 1;
 
-    this.attack = 1;
-    this.defence = 1;
+    this.attack = undefined;
+    this.defence = undefined;
   }
 
   levelUp() {
     try {
-      if (this.health > 0) { // Почему в задании "не равен 0"? А отрицат.норм?
+      if (this.health > 0) { // Почему в заданиее сказано "не =0"? А отрицательное разве может быть?
         this.level += 1;
         this.attack *= 1.2;
         this.defence *= 1.2;
@@ -49,7 +40,7 @@ export default class Character {
 
   damage(points) {
     try {
-      if (this.health > 0) { // Почему в задании "">=0", ведь если 0,то умер?
+      if (this.health > 0) { // Почему в задании "">=0", ведь если =0,то уже умер?
         this.health -= points * (1 - this.defence / 100);
       }
     } catch {
