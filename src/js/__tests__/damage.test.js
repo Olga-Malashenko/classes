@@ -1,11 +1,16 @@
 import Magician from '../Magician';
 
-test.each([
-  [50, 38],
-  [0, 0],
-])('should change options with method damage', (health, expected) => {
+test('should change options with method damage', () => {
   const personage = new Magician('Ivan', 'Magician');
-  personage.health = health;
+  personage.health = 50;
   personage.damage(20);
-  expect(personage.health).toEqual(expected);
+  expect(personage.health).toBe(38);
+});
+
+test('should an error be trown', () => {
+  expect(() => {
+    const personage = new Magician('Ivan', 'Magician');
+    personage.health = 0;
+    personage.damage(20);
+  }).toThrow('Хуже уже некуда, персонаж умер');
 });
