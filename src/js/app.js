@@ -35,8 +35,6 @@ export default class Character {
   damage(points) {
     if (this.health > 0) {
       this.health -= points * (1 - this.defence / 100);
-      console.log(this.defence, points);
-      console.log(this.health);
     } else {
       throw new Error('Хуже уже некуда, персонаж умер');
     }
